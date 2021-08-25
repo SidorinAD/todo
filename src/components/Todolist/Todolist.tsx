@@ -1,6 +1,9 @@
-import { observer } from "mobx-react"
+import { observer } from "mobx-react-lite"
 import { useEffect } from "react";
-import todo from "../../store/todo";
+import todo from "../../store/todo-store";
+import { Container } from "@material-ui/core";
+import { TodoItem } from "../TodoItem/TodoItem";
+
 
 
 const TodoList = observer(() => {
@@ -9,14 +12,11 @@ const TodoList = observer(() => {
     }, [])
     
   return (
-        <div>
+        <Container>
             {todo.todos.map(todo =>
-                <div key={todo.id}>
-                    {todo.id}
-                    {todo.title}
-                </div>
+                <TodoItem props={todo} key={todo.id} />
             )}
-        </div>
+        </Container>
   );
 });
 

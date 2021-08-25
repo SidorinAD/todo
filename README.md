@@ -44,3 +44,13 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+/*
+    mobx-lite
+    передача стора через контекст
+    деструктуризация
+    индексные файлы
+    убрать стринг в линке
+    фетч асинк
+    декораторы в TS
+*/

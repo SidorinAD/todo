@@ -1,12 +1,11 @@
 import { makeAutoObservable } from "mobx";
+import { TodoItem } from "../components/TodoItem/TodoItem";
 import { todoLink } from "../const/const";
 import { TodoType } from "../types/types";
 
 
 class Todo {
-  todos: TodoType[] = [
-      
-  ];
+  todos: TodoType[] = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -20,8 +19,8 @@ class Todo {
     this.todos = this.todos.filter(todo => todo.id !== id)
   }
 
-  completeTodo() {
-    
+  completeTodo(id: number) {
+    this.todos = this.todos
   }
 
   fetchTodos() {
