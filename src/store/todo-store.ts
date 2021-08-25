@@ -1,7 +1,6 @@
 import { makeAutoObservable } from "mobx";
-import { TodoItem } from "../components/TodoItem/TodoItem";
-import { todoLink } from "../const/const";
-import { TodoType } from "../types/types";
+import { todoLink } from "../const";
+import { TodoType } from "../types";
 
 
 class Todo {

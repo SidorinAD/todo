@@ -1,3 +1,2 @@
-const todoLink: string = "https://jsonplaceholder.typicode.com/todos/";
+export const todoLink = "https://jsonplaceholder.typicode.com/todos/";
 
-export {todoLink};

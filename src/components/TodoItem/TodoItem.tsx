@@ -3,7 +3,7 @@ import { Box } from "@material-ui/core"
 import { TodoType } from "../../types/types"
 import todo from "../../store/todo-store";
 
-const TodoItem = ({props} : any) => {
+export const TodoItem = ({props} : any) => {
     return (
       <Box display="flex">
         <p>{props.id}</p>
@@ -17,4 +17,3 @@ const TodoItem = ({props} : any) => {
     );
 }
 
-export {TodoItem}
