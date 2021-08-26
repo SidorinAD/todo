@@ -1,26 +1,25 @@
 import { observer } from "mobx-react-lite"
 import { useEffect } from "react";
-import { createContext } from "react";
 import { useContext } from "react";
 
-import { TodoItem } from "../TodoItem";
-
 import { Container } from "@material-ui/core";
+import { TodoContext } from "../..";
 
 
-
-const TodoContext = createContext<Todo>()
 
 export const TodoList = observer(() => {
-    const todo = useContext(TodoContext)
+    const todo = useContext(TodoContext);
     useEffect(() => {
         todo.fetchTodos();
-    }, [])
+    }, [todo])
     
   return (
         <Container>
-            {todo.todos.map((todo: { id: number; }) =>
-                <TodoItem props={todo} key={todo.id} />
+            {todo.todos.map((todo) =>
+                <div key={todo.id}>
+                    {todo.id}
+                    {todo.title}
+                </div>
             )}
         </Container>
   );

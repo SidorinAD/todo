@@ -1,9 +1,8 @@
 import { makeAutoObservable } from "mobx";
-import { createContext } from "react";
 import { todoLink } from "../const";
 import { TodoType } from "../types";
 
-class Todo {
+export class TodoStore {
   todos: TodoType[] = [];
 
   constructor() {
@@ -35,4 +34,4 @@ class Todo {
   }
 }
 
-export default new Todo();
+
