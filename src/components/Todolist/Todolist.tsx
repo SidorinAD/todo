@@ -9,7 +9,7 @@ import { Container } from "@material-ui/core";
 
 
 
-
+const TodoContext = createContext<Todo>()
 
 export const TodoList = observer(() => {
     const todo = useContext(TodoContext)
