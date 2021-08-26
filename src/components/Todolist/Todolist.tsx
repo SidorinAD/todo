@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { Container } from "@material-ui/core";
 import { TodoContext } from "../..";
 
+import { TodoItem } from "../TodoItem";
+
 
 
 export const TodoList = observer(() => {
@@ -14,14 +16,11 @@ export const TodoList = observer(() => {
     }, [todo])
     
   return (
-        <Container>
-            {todo.todos.map((todo) =>
-                <div key={todo.id}>
-                    {todo.id}
-                    {todo.title}
-                </div>
-            )}
-        </Container>
+    <Container>
+      {todo.todos.map(todo => (
+          <TodoItem todo={todo} key={todo.id} />
+      ))}
+    </Container>
   );
 });
 
