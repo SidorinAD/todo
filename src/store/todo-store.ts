@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
+import { createContext } from "react";
 import { todoLink } from "../const";
 import { TodoType } from "../types";
-
 
 class Todo {
   todos: TodoType[] = [];
@@ -19,7 +19,11 @@ class Todo {
   }
 
   completeTodo(id: number) {
-    this.todos = this.todos
+    const index = this.todos.findIndex(item => item.id === id);
+    if (index > -1) {
+      this.todos[index].completed = !this.todos[index].completed
+    }
+    
   }
 
   fetchTodos() {
