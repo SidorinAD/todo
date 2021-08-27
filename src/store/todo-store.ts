@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 import { todoLink } from "../const";
 import { TodoType } from "../types";
 
+
 export class TodoStore {
   todos: TodoType[] = [];
 
