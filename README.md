@@ -53,4 +53,5 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     убрать стринг в линке
     фетч асинк
     декораторы в TS
+    Uid
 */

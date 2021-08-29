@@ -5,14 +5,14 @@ import { useTodoStore } from "../../utils/hooks";
 import { TodoItem } from "../TodoItem";
 
 export const TodoList = observer(() => {
-  const todo = useTodoStore();
+  const {TodoStore} = useTodoStore();
   useEffect(() => {
-    todo.TodoStore.fetchTodos();
-  }, []);
+    TodoStore.fetchTodos();
+  }, [TodoStore]);
 
   return (
     <Container>
-      {todo.TodoStore.todos.map((todo) => (
+      {TodoStore.todos.map((todo) => (
         <TodoItem todoData={todo} key={todo.id} />
       ))}
     </Container>
