@@ -33,12 +33,12 @@ export const AddTodoForm = observer(() => {
   
   const inputChange = (event : React.ChangeEvent<HTMLInputElement>) => {
     const enteredTodoTitle = event.target.value;
-    console.log()
     setNewTodoTitle(enteredTodoTitle)
+    console.log(enteredTodoTitle);
   } 
 
-  const addTodo = (enteredTodoTitle: any) => {
-    TodoStore.addTodo(enteredTodoTitle);
+  const addTodo = () => {
+    TodoStore.addTodo(newTodoTitle);
   };
   return (
     <AppBar className={classes.sticky}>
