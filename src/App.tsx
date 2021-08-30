@@ -1,4 +1,3 @@
-import React from "react";
 import { TodoList } from "./components/Todolist";
 import { AddTodoForm} from './components/AddTodoForm'
 import { Container } from "@material-ui/core";

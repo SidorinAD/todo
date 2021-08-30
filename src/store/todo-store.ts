@@ -10,8 +10,16 @@ export class TodoStore {
     makeAutoObservable(this);
   }
 
-  addTodo(todo: TodoType) {
-    this.todos.push(todo)
+  addTodo(newTodoTitle: string) {
+    const newTodo = {
+      id: this.todos.length + 1,
+      title: newTodoTitle,
+      completed: false
+    }
+
+    console.log(newTodo)
+
+    this.todos.push(newTodo);
   }
 
   removeTodo(id: number) {

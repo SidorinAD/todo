@@ -54,4 +54,12 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     фетч асинк
     декораторы в TS
     Uid
+    position sticky
+    dnd
+    context fix
+    add form no reload
+    ограничить обращения к Api
+    рассказать про дебаунсер/тротрер и спросить когда использовать 
+    кастомный хук для получения тудушек фетч
+    12 30
 */

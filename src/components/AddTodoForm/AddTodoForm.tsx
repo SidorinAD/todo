@@ -1,28 +1,63 @@
-import { Input, Button, Grid } from "@material-ui/core"
+import { Input, Button, Paper, Box } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
+import { AppBar } from "@material-ui/core";
 
-export const AddTodoForm = () => {
-    return (
-      <Grid
-        container
-        direction="row"
-        spacing={10}
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid item xs={12}>
-          <form>
-            <Input placeholder="Add Todo" fullWidth={true} />
+import { useTodoStore } from "../../utils/hooks";
+import { observer } from "mobx-react-lite";
 
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              style={{ width: "10%" }}
-            >
+import React, { useState } from "react";
+
+const useStyles = makeStyles({
+  sticky: {
+    position: "sticky",
+    top: 0,
+    background: "white",
+  },
+  paper: {
+    height: "56px",
+  },
+  box: {
+    display: "flex",
+    alignContent: "center",
+    height: "100%",
+  },
+  input: {
+    paddingLeft: "1rem",
+  },
+});
+
+export const AddTodoForm = observer(() => {
+  const { TodoStore } = useTodoStore();
+  const classes = useStyles();
+  const [newTodoTitle, setNewTodoTitle] = useState<string>('')
+  
+  const inputChange = (event : React.ChangeEvent<HTMLInputElement>) => {
+    const enteredTodoTitle = event.target.value;
+    console.log()
+    setNewTodoTitle(enteredTodoTitle)
+  } 
+
+  const addTodo = (enteredTodoTitle: any) => {
+    TodoStore.addTodo(enteredTodoTitle);
+  };
+  return (
+    <AppBar className={classes.sticky}>
+      <form>
+        <Paper className={classes.paper}>
+          <Box className={classes.box}>
+            <Input
+              className={classes.input}
+              placeholder="Add Todo"
+              fullWidth={true}
+              value={newTodoTitle}
+              onChange={inputChange}
+            />
+            <Button variant="contained" color="primary" onClick={addTodo}>
               Add
             </Button>
-          </form>
-        </Grid>
-      </Grid>
-    );
-}
+          </Box>
+        </Paper>
+      </form>
+    </AppBar>
+  );
+});

@@ -9,6 +9,8 @@ import { CheckboxProps } from "@material-ui/core/Checkbox";
 import { observer } from "mobx-react-lite";
 import { useTodoStore } from "../../utils/hooks";
 
+
+
 const GreenCheckbox = withStyles({
   root: {
     color: red[400],
@@ -19,13 +21,15 @@ const GreenCheckbox = withStyles({
   checked: {},
 })((props: CheckboxProps) => <Checkbox color="default" {...props} />);
 
+
+
 export const TodoItem = observer(({ todoData }: any) => {
-  const todo = useTodoStore();
-  const { id, title, completed } = todoData;
-  console.log(todoData);
+  // деструктур, убрать грид, типизация Any
+  const { id, title, completed} = todoData;
+  const {TodoStore} = useTodoStore();
   return (
     <Grid container direction="row" spacing={3}>
-      <Grid item xs={12}>
+      <Grid item xs={12}> 
         <Paper>
           <Box
             display="flex"
@@ -38,9 +42,9 @@ export const TodoItem = observer(({ todoData }: any) => {
             <Box display="flex" alignItems="center">
               <GreenCheckbox
                 checked={completed}
-                onClick={() => todo.TodoStore.completeTodo(id)}
+                onClick={() => TodoStore.completeTodo(id)}
               />
-              <Delete onClick={() => todo.TodoStore.removeTodo(id)}></Delete>
+              <Delete onClick={() => TodoStore.removeTodo(id)}/>
             </Box>
           </Box>
         </Paper>

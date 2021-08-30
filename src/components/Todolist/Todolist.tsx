@@ -4,8 +4,9 @@ import { Container } from "@material-ui/core";
 import { useTodoStore } from "../../utils/hooks";
 import { TodoItem } from "../TodoItem";
 
+
 export const TodoList = observer(() => {
-  const {TodoStore} = useTodoStore();
+  const { TodoStore } = useTodoStore();
   useEffect(() => {
     TodoStore.fetchTodos();
   }, [TodoStore]);
